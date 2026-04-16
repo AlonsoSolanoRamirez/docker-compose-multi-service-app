@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Docker Compose App</title>
+</head>
+<body>
+    <h1>Frontend</h1>
+    <button onclick="getMessage()">Get Backend Message</button>
+    <p id="message"></p>
+
+    <script>
+	function getMessage() {
+	    fetch("http://localhost:5000")
+			.then(response => response.text())
+		        .then(data => {document.getElementById("message").innerText = data;
+				                                                            })
+		        .catch(error) => console.error(error));
+	                                                        }
+    </script>
+</body>
+</html>
