@@ -6,17 +6,20 @@
 </head>
 <body>
     <h1>Frontend</h1>
+
     <button onclick="getMessage()">Get Backend Message</button>
+
     <p id="message"></p>
 
     <script>
-	function getMessage() {
-	    fetch("http://localhost:5000")
-			.then(response => response.text())
-		        .then(data => {document.getElementById("message").innerText = data;
-				                                                            })
-		        .catch(error) => console.error(error));
-	                                                        }
+        function getMessage() {
+            fetch("https://musical-spoon-wr5gp594wqxjh5j4q-5000.app.github.dev")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("message").innerText = data;
+                })
+                .catch(error => console.error(error));
+        }
     </script>
 </body>
 </html>
